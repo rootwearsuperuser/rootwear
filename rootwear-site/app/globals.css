@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Terminal/Hacker Background */
+html, body {
+  background-color: #000000;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Terminal cursor animation */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor {
+  display: inline-block;
+  animation: cursor-blink 0.9s steps(2, start) infinite;
+  /* Reduce repaints */
+  will-change: opacity;
+}
+
+/* Enhanced glitch effect - optimized for performance */
+@keyframes glitch {
+  0% { transform: translate(0); text-shadow: 0 0 0 #00ff00; }
+  20% { transform: translate(-1px, 1px); text-shadow: -1px 0 #00ff00, 1px 0 #ff0000; }
+  40% { transform: translate(1px, -1px); text-shadow: 1px 1px #00ff00, -1px -1px #ff0000; }
+  60% { transform: translate(-1px, -1px); text-shadow: 1px -1px #00ff00, -1px 1px #ff0000; }
+  80% { transform: translate(1px, 1px); text-shadow: -1px -1px #00ff00, 1px -1px #ff0000; }
+  100% { transform: translate(0); text-shadow: 0 0 0 #00ff00; }
+}
+
+.animate-glitch {
+  animation: glitch 0.9s infinite;
+  /* Use hardware acceleration for better performance */
+  transform: translateZ(0);
+  will-change: transform, text-shadow;
+}
+
+/* Smooth fade animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out both;
+  will-change: opacity;
+  transform: translateZ(0);
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out both;
+  will-change: opacity, transform;
+  transform: translateZ(0);
+}
+
+/* Terminal glow effects */
+@keyframes terminal-glow {
+  0%, 100% { box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; }
+  50% { box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+}
+
+.animate-terminal-glow {
+  animation: terminal-glow 2s ease-in-out infinite;
+  will-change: box-shadow;
+  /* Use a pseudo-element for the glow to improve performance */
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover glow for interactive elements */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Matrix-style text glow */
+.text-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Scrollbar styling for terminal theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}

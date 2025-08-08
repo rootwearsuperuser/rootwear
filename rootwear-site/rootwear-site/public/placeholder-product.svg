@@ -1,0 +1,8 @@
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#1f2937" />
+  <text x="50%" y="50%" font-family="monospace" font-size="24" fill="#10b981" text-anchor="middle" dominant-baseline="middle">RootWear Image</text>
+  <text x="50%" y="58%" font-family="monospace" font-size="18" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">Image Not Available</text>
+  <rect x="150" y="150" width="300" height="200" stroke="#10b981" stroke-width="2" fill="none" />
+  <line x1="150" y1="150" x2="450" y2="350" stroke="#10b981" stroke-width="2" />
+  <line x1="450" y1="150" x2="150" y2="350" stroke="#10b981" stroke-width="2" />
+</svg>
